@@ -2,6 +2,7 @@
 /env/
 .idea/
 db.sqlite3
+chinook.db
 *.pyc
 sqlite-dll-win64-x64-3310100
 venv/
