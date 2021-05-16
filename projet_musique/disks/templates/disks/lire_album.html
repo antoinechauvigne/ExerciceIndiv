@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Album</title>
+    <title>Album {{album_id}}</title>
 </head>
 <body>
-<h1>Bienvenue sur l'album</h1>
+<h1>Bienvenue sur l'album numero {{album_id}}</h1>
+
 {% for track in tracks %}
     <div class="track">
         <h3>{{ track.name }}</h3>
