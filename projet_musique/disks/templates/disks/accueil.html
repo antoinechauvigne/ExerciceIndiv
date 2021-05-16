@@ -5,6 +5,13 @@
     <title>Title</title>
 </head>
 <body>
-
+<h1>Bienvenue dans votre bibliothèque sonore ! </h1>
+{% for album in albums %}
+    <div class="albums">
+        <h3>{{ album.title }}</h3>
+    </div>
+{% empty %}
+    <p>Aucun article.</p>
+{% endfor %}
 </body>
 </html>
