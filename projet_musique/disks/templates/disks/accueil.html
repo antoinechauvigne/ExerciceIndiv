@@ -2,13 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Accueil</title>
 </head>
 <body>
 <h1>Bienvenue dans votre bibliothèque sonore ! </h1>
 {% for album in albums %}
     <div class="albums">
-        <h3>{{ album.title }}</h3>
+        <a href="{% url 'lire_album' album.id %}">
+            <p>{{ album.title }}</p></a>
+
     </div>
 {% empty %}
     <p>Aucun article.</p>

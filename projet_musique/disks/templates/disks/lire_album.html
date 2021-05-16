@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Album</title>
+</head>
+<body>
+<h1>Bienvenue sur l'album</h1>
+{% for track in tracks %}
+    <div class="track">
+        <h3>{{ track.name }}</h3>
+        <p>{{ track.composer }} </p>
+        <p>{{ track.unitPrice }} USD </p>
+        <p>{{ track.milliseconds }} ms </p>
+
+
+
+    </div>
+{% empty %}
+    <p>Aucun article.</p>
+{% endfor %}
+</body>
+</html>

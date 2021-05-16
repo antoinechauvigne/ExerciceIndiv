@@ -8,7 +8,7 @@ class Track(models.Model):
     composer = models.CharField(max_length=200)
     milliseconds = models.IntegerField()
     bytes = models.IntegerField()
-    unit_price = models.DecimalField(max_digits=4, decimal_places=2)
+    unitPrice = models.DecimalField(max_digits=4, decimal_places=2)
     album = models.ForeignKey('Album', on_delete=models.CASCADE)
 
 
