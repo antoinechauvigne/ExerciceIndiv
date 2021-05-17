@@ -6,6 +6,12 @@
 </head>
 <body>
 <h1>Bienvenue dans votre bibliothèque sonore ! </h1>
+<form action="{% url 'accueil' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>
+
 {% for album in albums %}
     <div class="albums">
         <a href="{% url 'lire_album' album.id %}">

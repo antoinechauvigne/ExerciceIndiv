@@ -1,11 +1,19 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_list_or_404
 from .models import Album, Track
+from .forms import RechercheForm
 
 
 # Create your views here.
 def accueil(request):
     """ Afficher tous les articles de notre blog """
-    albums = Album.objects.all()  # Nous sélectionnons toutes les instances de la classe Album
+    form = RechercheForm(request.POST or None)
+
+    if form.is_valid():
+        recherche = form.cleaned_data["recherche"]
+        albums = Album.objects.filter(title__contains=recherche)
+    else:
+        albums = get_list_or_404(Album) # Nous sélectionnons toutes les instances de la classe Album
+
     return render(request, 'disks/accueil.html', {'albums': albums})
 
 
