@@ -12,5 +12,6 @@ def accueil(request):
 def lire_album(request, album_id):
     """ Afficher le contenu d'un album """
     album_id=album_id
-    tracks = Track.objects.filter(album=album_id)
+    mon_album = Album.objects.get(id=album_id)
+    tracks = Track.objects.filter(album_id=album_id)
     return render(request, 'disks/lire_album.html', locals())

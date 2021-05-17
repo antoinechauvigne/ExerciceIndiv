@@ -5,7 +5,7 @@
     <title>Album {{album_id}}</title>
 </head>
 <body>
-<h1>Bienvenue sur l'album numero {{album_id}}</h1>
+<h1>Bienvenue sur l'album {{mon_album.title}}</h1>
 
 {% for track in tracks %}
     <div class="track">
@@ -13,12 +13,16 @@
         <p>{{ track.composer }} </p>
         <p>{{ track.unitPrice }} USD </p>
         <p>{{ track.milliseconds }} ms </p>
-
-
-
     </div>
+
 {% empty %}
     <p>Aucun article.</p>
 {% endfor %}
+
+<!-- Bouton pour revenir à la page d'accueil-->
+<a href="{% url 'accueil' %}">
+    <button>Retour à la page d'accueil</button>
+</a>
+
 </body>
 </html>
