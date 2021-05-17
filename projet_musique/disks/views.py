@@ -14,7 +14,7 @@ def accueil(request):
     else:
         albums = get_list_or_404(Album) # Nous sélectionnons toutes les instances de la classe Album
 
-    return render(request, 'disks/accueil.html', {'albums': albums})
+    return render(request, 'disks/accueil.html', locals())
 
 
 def lire_album(request, album_id):
